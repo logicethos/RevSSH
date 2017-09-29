@@ -47,4 +47,5 @@ OR from another console
 
 **The default password is admin.  Change this!**
 
-![Screenshot](https://github.com/logicethos/RevSSH/blob/master/screenshot1.png?raw=true)
+![Screenshot](https://raw.githubusercontent.com/logicethos/RevSSH/master/screenshot1.png)
+
