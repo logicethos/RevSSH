@@ -5,13 +5,19 @@ Reverse SSH server, with Gate One Web front end
 SSH login to a Linux device behind a firewall/mobile networks.  Suggested uses:
 
  - Support customers/friends computers
- - IOT devices
+ - Remote control IOT devices
  - Development/Debugging
+
+
+----------
+
 
 Requirements:
 
 > Server/Desktop with Docker, and public IP address.
 > Devices to connect to. Must have an SSH client and wget or curl
+
+----------
 
 To install/run on server:
 
@@ -26,10 +32,19 @@ e.g:
 
     docker run -d -e "SSHHOST=rssh.mydomain.com" -p 8000:8000 -e "HTTPSPORT=8000" -p 221:22  -e "SSHPORT=221" --restart always logicethos/revssh
 
+
+----------
+
+
 **To Use:**
 
-Open your console or go to `https://<host>:<https port>`
+Go to `https://<host>:<https port>` and click on "Terminal SSH".  Type in:
 
-    ssh admin@host -p <ssh port>
+    ssh://admin@localhost:22
+OR from another console
+
+    ssh admin@<host> -p <ssh port>
 
 **The default password is admin.  Change this!**
+
+![Screenshot](screenshot1.png?raw=true "Admin Console")
