@@ -47,4 +47,4 @@ OR from another console
 
 **The default password is admin.  Change this!**
 
-![Screenshot](screenshot1.png?raw=true "Admin Console")
+![Screenshot](screenshot1.png)
