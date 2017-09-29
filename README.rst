@@ -49,3 +49,4 @@ OR from another console
 
 ![Screenshot](https://raw.githubusercontent.com/logicethos/RevSSH/master/screenshot1.png)
 
+At the top of the login screen, you will see a wget & curl command line.  One of these can be used to initiate a remote connection.
