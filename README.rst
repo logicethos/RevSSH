@@ -14,8 +14,8 @@ SSH login to a Linux device behind a firewall/mobile networks.  Suggested uses:
 
 Requirements:
 
-> Server/Desktop with Docker, and public IP address.
-> Devices to connect to. Must have an SSH client and wget or curl
+- Server/Desktop with Docker, and public IP address.
+- Devices to connect to. Must have an SSH client and wget or curl
 
 ----------
 
@@ -47,4 +47,4 @@ OR from another console
 
 **The default password is admin.  Change this!**
 
-![Screenshot](screenshot1.png)
+![Screenshot](https://github.com/logicethos/RevSSH/blob/master/screenshot1.png?raw=true)
