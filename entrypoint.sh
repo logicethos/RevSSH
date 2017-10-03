@@ -10,3 +10,8 @@ chmod 0755 /var/run/sshd
  
 #Start Gateone 
 /usr/local/bin/update_and_run_gateone --log_file_prefix=/gateone/logs/gateone.log
+
+#Debug
+if [ "$EXITDELAY" -gt "0" ] ; then
+  sleep $EXITDELAY
+fi

@@ -9,7 +9,7 @@ A plugin for reverse ssh
 """
 
 __version__ = '1.0'
-__license__ = "Apache 2.0"
+__license__ = "MIT"
 __version_info__ = (1, 0)
 __author__ = 'Stuart Johnson <stuart@logicethos.com>'
 
@@ -28,6 +28,7 @@ PLUGIN_PATH = os.path.split(__file__)[0] # Path to our plugin's directory
 ssh_log = go_logger("gateone.terminal.revssh", plugin='revssh')
 
 connectFilename = "connect.sh"
+infoFilename = "info.html"
 
 portCounterMin=10000
 portCounterMax=19999
@@ -134,7 +135,23 @@ class RSAPubHandler(BaseHandler):
         else:
            ssh_log.info("Incorrect ssh_rsa upload")
 
+# https://<host>/info
+class InfoHandler(BaseHandler):
+
+    def get(self):                      #Get info page
+
+        hosturl = "https://" + self.request.host
+    
+        with portCounterLock:
+            self.render(
+                os.path.join(PLUGIN_PATH,infoFilename), # The path to a template file
+                HOSTURL = hosturl,
+                REMOTEIP = self.request.remote_ip,
+                SSHPORT = sshPort
+                )
+
+
 
 hooks = {
-    'Web': [(r"/connect", RevSSHHandler), (r"/rsa", RSAHandler), (r"/rsapub", RSAPubHandler)]
-     }
+    'Web': [(r"/connect", RevSSHHandler), (r"/rsa", RSAHandler), (r"/rsapub", RSAPubHandler), (r"/info", InfoHandler)]
+        }
