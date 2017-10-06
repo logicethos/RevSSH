@@ -1,26 +1,25 @@
-Reverse SSH server, with Gate One Web front end
----------------------------
+Reverse SSH server (with optional Web front end)
+----------
 
-
-SSH login to a Linux device behind a firewall/mobile networks.  Suggested uses:
+SSH login to a Linux device behind firewall/mobile networks.  Suggested uses:
 
  - Support customers/friends computers
  - Remote control IOT devices
  - Development/Debugging
 
 
-----------
 
 
 Requirements:
+-------------
 
 - Server/Desktop with Docker, and public IP address.
 - Devices to connect to. Must have an SSH client and wget or curl
 
-----------
+
 
 To install/run on server:
-
+-----------
     docker run -d --cap-add=SYS_PTRACE \
                -e "SSHHOST=<host>" \                   #This is the public IP or Domain
                -p <port>:8000 -e "HTTPSPORT=<port>" \  #HTTPS port (e.g 8000)
@@ -36,7 +35,8 @@ e.g:
 ----------
 
 
-**To Use:**
+To Use:
+-------
 
 Go to `https://<host>:<https port>` and click on "Terminal SSH".  Type in:
 
@@ -47,6 +47,7 @@ OR from another console
 
 **The default password is admin.  Change this!**
 
-![Screenshot](https://raw.githubusercontent.com/logicethos/RevSSH/master/screenshot1.png)
 
-At the top of the login screen, you will see a wget & curl command line.  One of these can be used to initiate a remote connection.
+.. figure:: https://raw.githubusercontent.com/logicethos/RevSSH/master/screenshot1.png
+
+At the top of the login screen, you will see a wget & curl command line.  One of these can be used to initiate connection from the remote client.  Or you can visit https://<host>:<https port>/info for instructions.
