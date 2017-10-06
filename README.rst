@@ -44,7 +44,7 @@ Go to `https://<host>:<https port>` and click on "Terminal SSH".  Type in:
 
 .. code::
 
-ssh://admin@localhost:22
+   ssh://admin@localhost:22
 
 OR from another console
 .. code::
@@ -59,4 +59,4 @@ OR from another console
 At the top of the login screen, you will see a wget & curl command line.  One of these can be used to initiate connection from the remote client.  Or you can visit 
 .. code::
 
-https://<host>:<https port>/info for instructions.
+   https://<host>:<https port>/info for instructions.
