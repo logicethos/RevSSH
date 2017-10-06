@@ -20,6 +20,9 @@ Requirements:
 
 To install/run on server:
 -----------
+
+.. code::
+
     docker run -d --cap-add=SYS_PTRACE \
                -e "SSHHOST=<host>" \                   #This is the public IP or Domain
                -p <port>:8000 -e "HTTPSPORT=<port>" \  #HTTPS port (e.g 8000)
@@ -28,11 +31,10 @@ To install/run on server:
                logicethos/revssh
 
 e.g:
+.. code::
 
     docker run -d -e "SSHHOST=rssh.mydomain.com" -p 8000:8000 -e "HTTPSPORT=8000" -p 221:22  -e "SSHPORT=221" --restart always logicethos/revssh
 
-
-----------
 
 
 To Use:
@@ -40,8 +42,12 @@ To Use:
 
 Go to `https://<host>:<https port>` and click on "Terminal SSH".  Type in:
 
-    ssh://admin@localhost:22
+.. code::
+
+ssh://admin@localhost:22
+
 OR from another console
+.. code::
 
     ssh admin@<host> -p <ssh port>
 
@@ -50,4 +56,7 @@ OR from another console
 
 .. figure:: https://raw.githubusercontent.com/logicethos/RevSSH/master/screenshot1.png
 
-At the top of the login screen, you will see a wget & curl command line.  One of these can be used to initiate connection from the remote client.  Or you can visit https://<host>:<https port>/info for instructions.
+At the top of the login screen, you will see a wget & curl command line.  One of these can be used to initiate connection from the remote client.  Or you can visit 
+.. code::
+
+https://<host>:<https port>/info for instructions.
