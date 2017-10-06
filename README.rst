@@ -7,10 +7,10 @@ SSH login to a Linux device behind firewall/mobile networks.  Suggested uses:
  - Remote control IOT devices
  - Development/Debugging
 
+.. figure:: https://raw.githubusercontent.com/logicethos/RevSSH/master/diagram1.png
 
 
-
-Requirements:
+Requirements
 -------------
 
 - Server/Desktop with Docker, and public IP address.
@@ -18,15 +18,15 @@ Requirements:
 
 
 
-To install/run on server:
+To install/run on server
 -----------
 
 .. code::
 
     docker run -d --cap-add=SYS_PTRACE \
                -e "SSHHOST=<host>" \                   #This is the public IP or Domain
-               -p <port>:8000 -e "HTTPSPORT=<port>" \  #HTTPS port (e.g 8000)
-               -p <port>:22  -e "SSHPORT=<port>" \     #SSH port (e.g 221)
+               -p <port>:<port> -e "HTTPSPORT=<port>" \  #HTTPS port (e.g 8000)
+               -p <port>:<port> -e "SSHPORT=<port>" \     #SSH port (e.g 221)
                --cap-add=SYS_PTRACE \
                logicethos/revssh
 
@@ -37,16 +37,17 @@ e.g:
 
 
 
-To Use:
+To Use
 -------
 
-Go to `https://<host>:<https port>` and click on "Terminal SSH".  Type in:
+Go to **https://<host>:<https port>** and click on "Terminal SSH".  Type in:
 
 .. code::
 
    ssh://admin@localhost:22
 
 OR from another console
+
 .. code::
 
     ssh admin@<host> -p <ssh port>
@@ -56,7 +57,8 @@ OR from another console
 
 .. figure:: https://raw.githubusercontent.com/logicethos/RevSSH/master/screenshot1.png
 
-At the top of the login screen, you will see a wget & curl command line.  One of these can be used to initiate connection from the remote client.  Or you can visit 
+At the top of the login screen, you will see a wget & curl command line.  One of these can be used to initiate connection from the remote client.  Or you can visit
+
 .. code::
 
    https://<host>:<https port>/info for instructions.
