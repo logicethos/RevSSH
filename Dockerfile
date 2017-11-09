@@ -8,6 +8,7 @@ FROM liftoff/gateone
 
 # Install packages.
 RUN \
+  apt-get update && \
   apt-get install -y openssh-server joe less findutils lsof python-dateutil sudo && \
   rm -rf /var/lib/apt/lists/*
 
