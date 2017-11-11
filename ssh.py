@@ -112,9 +112,9 @@ keyFile_list = {}
 for file in glob.glob(file_keys):
   with open(file) as f:
     for line in f:
-      keymatch = re.search("((?<= )\S+(?=@)).+#(\d+)", line)
-      if keymatch and keymatch.group(1) and keymatch.group(2):
-         keyFile_list[keymatch.group(2)] = [keymatch.group(1),file]
+      keymatch = re.search("((?<= )\S+(?=@))@(\S+).+#(\d+)", line)
+      if keymatch and keymatch.group(1) and keymatch.group(2) and keymatch.group(3):
+         keyFile_list[keymatch.group(3)] = [keymatch.group(1),file,keymatch.group(2)]
 
 if RunMode == RunModeEnum.Display:
   print "ACTIVE CONNECTIONS\n"
@@ -125,6 +125,7 @@ for pid,item in ssh_list.items():
     timestamp = parser.parse(timestampstring)      
     timediff = (datetime.now()-timestamp.replace(tzinfo=None)).total_seconds()
 
+    item[1] = keyFile_list[item[0]][2] if item[0] in keyFile_list  else "<??>"
     item[4] = keyFile_list[item[0]][0] if item[0] in keyFile_list  else "<??>"
     if RunMode == RunModeEnum.Display:
         print "PORT: {0} \t{1}@{2} \t(PID:{3})\t{4}".format(item[0],item[4],item[1],pid,sec2time(timediff))
