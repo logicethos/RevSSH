@@ -128,7 +128,7 @@ for pid,item in ssh_list.items():
     item[1] = keyFile_list[item[0]][2] if item[0] in keyFile_list  else "<??>"
     item[4] = keyFile_list[item[0]][0] if item[0] in keyFile_list  else "<??>"
     if RunMode == RunModeEnum.Display:
-        print "PORT: {0} \t{1}@{2} \t(PID:{3})\t{4}".format(item[0],item[4],item[1],pid,sec2time(timediff))
+        print "PORT: {0} \t{1}@{2} \t(PID:{3})\t{4}".format(item[0],item[4],item[1].ljust(30-len(item[4])),pid,sec2time(timediff))
 
     if item[0]==port:
        ssh_list_select = item
