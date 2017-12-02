@@ -13,11 +13,11 @@ display()
  echo "Reverse SSH Terminal"
  echo "wget https://$SSHHOST:$HTTPSPORT/connect --no-check-certificate -O connect.sh; sh connect.sh"
  echo "curl -k https://$SSHHOST:$HTTPSPORT/connect -o connect.sh; sh connect.sh"
- echo "==============================================================================="
+ echo "======================================================================================="
  echo
  $RUNAPP
  echo
- echo "==============================================================================="
+ echo "======================================================================================="
  echo "-> Please enter SSH port to connect."
  echo "-> [ENTER] to refresh status."
  echo "-> 'passwd' to change password."
