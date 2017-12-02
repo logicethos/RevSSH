@@ -16,7 +16,11 @@ Requirements
 - Server/Desktop with Docker, and public IP address.
 - Devices to connect to. Must have an SSH client and wget or curl
 
+To build from GitHub
+-----------
+.. code::
 
+    docker build https://github.com/logicethos/RevSSH.git -t logicethos/revssh
 
 To install/run on server
 -----------
@@ -33,8 +37,9 @@ To install/run on server
 e.g:
 .. code::
 
-    docker run -d -e "SSHHOST=rssh.mydomain.com" -p 8000:8000 -e "HTTPSPORT=8000" -p 221:22  -e "SSHPORT=221" --restart always logicethos/revssh
+    docker run -d -e "SSHHOST=rssh.mydomain.com" -p 8000:8000 -e "HTTPSPORT=8000" -p 221:22  -e "SSHPORT=221" --cap-add=SYS_PTRACE --restart always logicethos/revssh
 
+It might seem odd that you need to specify the port numbers twice. Hopefully docker will allow port numbers to be read from the run command inside the container at some time in the future.
 
 
 To Use
